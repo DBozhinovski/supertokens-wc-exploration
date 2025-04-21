@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-// @ts-ignore
-import { load } from "./components/dashboard";
+// @ts-expect-error - NO TYPE YO 🔥
+import { registerComponent } from "./components/routeMounter";
 
 function Dashboard() {
   const dashboardRef = useRef(null);
   const navigate = useNavigate(); // Hook to get the navigate function
 
   useEffect(() => {
-    load();
-  }, []);
+    registerComponent({ navigate: navigate, preBuiltUI: "dashboard" });
+  }, [navigate]);
 
   useEffect(() => {
     const dashboardElement = dashboardRef.current;

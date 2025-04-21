@@ -13,17 +13,20 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <st-dashboard></st-dashboard>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      window.ST.staticMount({
-        targetElement: "#root",
-        navigate: (path) => {
-          window.location.href = path;
-        },
-        preBuiltUI: "dashboard",
-      });
+      window.ST.registerComponent({ preBuiltUI: "dashboard" });
+      // window.ST.staticMount({
+      //   targetElement: "#root",
+      // navigate: (path) => {
+      //     window.location.href = path;
+      //   },
+      //   preBuiltUI: "dashboard",
+      // });
     });
   </script>
 </body>

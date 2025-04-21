@@ -13,17 +13,13 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <st-email-password> </st-email-password>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      window.ST.staticMount({
-        targetElement: "#root",
-        navigate: (path) => {
-          window.location.href = path;
-        },
-        preBuiltUI: "email-password",
-      });
+      window.ST.registerComponent({ preBuiltUI: "email-password" });
     });
   </script>
 </body>
